@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header><h1>Projects</h1></header>
+<body>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam imperdiet ligula quis enim pharetra, nec commodo leo consectetur. Praesent id velit at justo luctus scelerisque in eget quam. Nunc facilisis eu risus in dictum. Mauris dapibus velit nec lobortis tristique. Quisque quis dapibus ante, sed iaculis urna. In hac habitasse platea dictumst. Pellentesque lobortis magna id tempor imperdiet. Sed sit amet ligula dapibus, dignissim dui non, lobortis est. Proin dignissim ante ut nibh mollis consequat. Duis condimentum risus eget condimentum bibendum. Pellentesque orci sapien, ultricies eu lobortis in, tristique finibus nisl. Donec finibus dictum tempus.
+            </p>
+            <p>{{projects}}</p>
+
+        {% for project in projects%}
+        <!--<h1>{{project.name}}</h1>
+
+        <div><h1>{{project.name}}</h1></div>-->
+
+        <article class="card">
+           <a href="{% url 'project_detail' project.id %}">
+            <h1>{{project.name}}</h1>
+         </a>
+            <button>Update</button>
+            <button>Delet</button>
+            
+        </article>
+        {% endfor %}
+    </body>
+    </html>
+{% endblock %}
+
+
